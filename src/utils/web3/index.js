@@ -1,4 +1,5 @@
 import Web3 from 'web3';
+import { ethNodeEndpoint } from '../'
 
 const options = {
     defaultAccount: "0x997a9268E44d9d7ba7D863f34ecbA78B819F2680",
@@ -14,7 +15,7 @@ const options = {
 export const web3Client = function () {
   let client = null
   const init = function () {
-    return new Web3('http://localhost:2000', null, options)
+    return new Web3(ethNodeEndpoint(), null, options)
   }
   return {
     get: () => {

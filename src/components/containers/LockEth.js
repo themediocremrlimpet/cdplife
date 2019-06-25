@@ -5,6 +5,6 @@ export default ({value, onChange, submit}) => (
   <div>
     <h5>Lock Eth</h5>
     <TextField value={value} onChange={onChange} />
-    <Button onClick={submit}>Lock {value} Eth</Button>
+    <Button color="primary" onClick={submit}>Lock {value} Eth</Button>
   </div>
 )

@@ -2,12 +2,15 @@ import Maker from '@makerdao/dai'
 import BigNumber from 'big-number'
 import ethjs from 'ethjs'
 import bitcoin from 'bitcoin'
+import { ethNodeEndpoint } from '../'
+
 const bip39 = require('bip39')
 const bip32 = require('bip32')
 
 
 const mnemonic = "hill law jazz limb penalty escape public dish stand bracket blue jar"
 const localChain = "http://localhost:2000"
+
 const privKey = "fe62e858a48dbdd566d7b5cc519deed0095330c0811db9114251d952a1a87f70"
 const address = "0x997a9268E44d9d7ba7D863f34ecbA78B819F2680"
 const daiClient = function() {
@@ -29,7 +32,7 @@ const daiClient = function() {
     */
     const maker = await Maker.create("http", {
       privateKey: privKey,
-      url: localChain
+      url: ethNodeEndpoint()
     })
 
     await maker.authenticate()
